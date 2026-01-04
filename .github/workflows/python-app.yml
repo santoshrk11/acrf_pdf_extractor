@@ -8,9 +8,9 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-      workflow_dispatch:  # Allows manual triggering from GitHub UI
-        schedule:
-            - cron: '0 0 * * 1'  # Runs every Monday at midnight UTC
+  workflow_dispatch:  # Allows manual triggering from GitHub UI
+  schedule:
+    - cron: '0 0 * * 1'  # Runs every Monday at midnight UTC
 
 permissions:
   contents: read
@@ -40,7 +40,6 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-
     - name: Run aCRF PDF Extractor
-          run: |
-                  python src/extract_acrf.py
+      run: |
+        python src/extract_acrf.py
